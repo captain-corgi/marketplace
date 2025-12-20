@@ -1,0 +1,70 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "corgi-hub-plugins",
+  "version": "1.0.0",
+  "owner": {
+    "name": "Captain Corgi",
+    "url": "https://github.com/captain-corgi"
+  },
+  "metadata": {
+    "description": "A comprehensive Claude Code plugin marketplace featuring the Corgi Greeting Team - demonstrating plugin capabilities including agents, commands, hooks, and MCP servers."
+  },
+  "plugins": [
+    {
+      "name": "greeting-plugin",
+      "description": "The Corgi Greeting Team - 4 corgi specialists (Captain Corgi, Cheerful Charlie, Cozy Cinnamon, Code Corgi) providing greetings, encouragement, and developer joy. Demonstrates Claude Code plugin features including agents, commands, hooks, and MCP servers.",
+      "source": "./plugins/greeting-plugin",
+      "version": "1.0.0",
+      "category": "greeting",
+      "author": {
+        "name": "Captain Corgi",
+        "url": "https://github.com/captain-corgi"
+      },
+      "license": "MIT",
+      "keywords": [
+        "greeting",
+        "corgi",
+        "emoji",
+        "motivation",
+        "developer-experience",
+        "mcp",
+        "lsp",
+        "hooks",
+        "agents"
+      ],
+      "homepage": "https://github.com/captain-corgi/corgi-hub-plugins",
+      "repository": "https://github.com/captain-corgi/corgi-hub-plugins",
+      "agents": [
+        "./agents/captain-corgi.md",
+        "./agents/cheerful-charlie.md",
+        "./agents/cozy-cinnamon.md",
+        "./agents/code-corgi.md"
+      ],
+      "commands": [
+        "./commands/"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "greeting",
+      "name": "Greeting & Motivation",
+      "description": "Greeting messages, motivation, and developer encouragement"
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity & Analysis",
+      "description": "Tools for decision-making, orchestration, and meta-cognitive analysis"
+    },
+    {
+      "id": "education",
+      "name": "Learning & Development",
+      "description": "Adaptive learning, teaching, and skill-building frameworks"
+    },
+    {
+      "id": "development",
+      "name": "Software Development",
+      "description": "Development workflows, code quality, and technical expertise"
+    }
+  ]
+}

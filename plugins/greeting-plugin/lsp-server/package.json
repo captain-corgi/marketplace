@@ -1,0 +1,28 @@
+{
+  "name": "corgi-greeting-lsp-server",
+  "version": "1.0.0",
+  "description": "LSP Server for the Corgi Greeting Team - provides completions, hover, and diagnostics",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "lsp",
+    "claude",
+    "greeting",
+    "corgi"
+  ],
+  "author": "Captain Corgi",
+  "license": "MIT",
+  "dependencies": {
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.11"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  }
+}

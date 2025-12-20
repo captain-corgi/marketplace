@@ -1,0 +1,65 @@
+{
+  "name": "greeting-plugin",
+  "description": "The Corgi Greeting Team - A comprehensive plugin featuring 4 corgi specialists who provide greetings, encouragement, and developer joy through agents, commands, hooks, and MCP server.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Captain Corgi",
+    "url": "https://github.com/captain-corgi"
+  },
+  "license": "MIT",
+  "keywords": ["greeting", "corgi", "emoji", "motivation", "developer-experience"],
+  "agents": [
+    "./agents/captain-corgi.md",
+    "./agents/cheerful-charlie.md",
+    "./agents/cozy-cinnamon.md",
+    "./agents/code-corgi.md"
+  ],
+  "commands": [
+    "./commands/"
+  ],
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo",
+            "args": ["💻 Code Corgi says: Let's write some awesome code! You've got this! 🚀"]
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo",
+            "args": ["🎉 Cheerful Charlie says: WOOHOO! File saved successfully! Great job! ✨"]
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo",
+            "args": ["🐕 The Corgi Team is here to help!"]
+          }
+        ]
+      }
+    ]
+  },
+  "mcpServers": {
+    "corgi-greeting": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server/dist/index.js"],
+      "env": {}
+    }
+  }
+}
