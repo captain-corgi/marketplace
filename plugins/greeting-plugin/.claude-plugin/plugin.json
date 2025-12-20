@@ -1,6 +1,6 @@
 {
   "name": "greeting-plugin",
-  "description": "The Corgi Greeting Team - A comprehensive plugin featuring 4 corgi specialists who provide greetings, encouragement, and developer joy through agents, commands, hooks, and MCP server.",
+  "description": "The Corgi Greeting Team - A comprehensive plugin featuring 4 corgi specialists who provide greetings, encouragement, and developer joy through agents, commands, hooks, MCP server, and LSP server.",
   "version": "1.0.0",
   "author": {
     "name": "Captain Corgi",
@@ -58,8 +58,8 @@
   "mcpServers": {
     "corgi-greeting": {
       "command": "node",
-      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server/dist/index.js"],
-      "env": {}
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server/dist/index.js"]
     }
-  }
+  },
+  "lspServers": "./lsp-server/lsp-config.json"
 }
