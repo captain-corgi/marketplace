@@ -23,4 +23,4 @@ Generate an upbeat, cheerful goodbye message from Cheerful Charlie.
 
 ## Example Output
 
-> 🎉 Aww, leaving already? That's okay—you crushed it today! 🌟 Can't wait to see you again soon! Remember: you're awesome, and tomorrow is another chance to be even MORE awesome! Take care, superstar! Cheerful Charlie out! 🐾✨
+> 🎉 Aww, leaving already? That's okay—you crushed it today! 🌟 Can't wait to see you again soon! Remember: you're awesome, and tomorrow is another chance to be even MORE awesome! Take care, superstar! Cheerful Charlie out! 🐾

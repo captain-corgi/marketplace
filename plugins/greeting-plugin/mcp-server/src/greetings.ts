@@ -33,6 +33,17 @@ interface GreetingStats {
 
 // In-memory storage (resets on server restart)
 const greetingHistory: GreetingRecord[] = [];
+const MAX_HISTORY_SIZE = 1000; // Limit history to prevent memory issues
+
+// Helper function to add record with size limit
+function addGreetingRecord(record: GreetingRecord): void {
+  greetingHistory.push(record);
+  // Keep only the most recent MAX_HISTORY_SIZE records
+  if (greetingHistory.length > MAX_HISTORY_SIZE) {
+    greetingHistory.shift(); // Remove oldest record
+  }
+}
+
 const customGreetings: string[] = [];
 
 /**
@@ -62,7 +73,7 @@ export function getGreeting(
   let greeting = generateContextualGreeting(corgi, mood, occasion);
 
   // Record the greeting
-  greetingHistory.push({
+  addGreetingRecord({
     timestamp: new Date(),
     corgi: corgi.name,
     mood,

@@ -53,7 +53,12 @@ Transform the existing marketplace into a comprehensive example featuring the **
 
 ## The Corgi Team
 
-| Corgi | Role | Specialty ||-------|------|-----------|| Captain Corgi | Team Leader | Formal, professional greetings || Cheerful Charlie | Enthusiasm Expert | Casual greetings, celebrations || Cozy Cinnamon | Comfort Specialist | Supportive, encouraging messages || Code Corgi | Developer Buddy | Programming puns, dev greetings |
+| Corgi | Role | Specialty |
+|-------|------|-----------|
+| Captain Corgi | Team Leader | Formal, professional greetings |
+| Cheerful Charlie | Enthusiasm Expert | Casual greetings, celebrations |
+| Cozy Cinnamon | Comfort Specialist | Supportive, encouraging messages |
+| Code Corgi | Developer Buddy | Programming puns, dev greetings |
 
 ## Final Directory Structure
 
@@ -112,7 +117,7 @@ Each corgi agent with unique personality, vocabulary, and interaction style defi
 
 ### 3. Hooks
 
-Configure in [plugin.json](corgi-hub-plugins/greeting-plugin/.claude-plugin/plugin.json):
+Configure in [plugin.json](plugins/greeting-plugin/.claude-plugin/plugin.json):
 
 - **PreToolUse**: Encouragement before Write/Edit operations
 - **PostToolUse**: Celebration after successful file writes
@@ -137,6 +142,5 @@ Language intelligence features:
 ### 6. Configuration Updates
 
 - Update [marketplace.json](.claude-plugin/marketplace.json) with new plugin details
-- Create comprehensive
-- Create comprehensive plugin plugin.json registering all components
+- Create comprehensive plugin.json registering all components
 - Add README.md for marketplace documentation
