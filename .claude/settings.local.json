@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh pr view:*)",
+      "Bash(gh api:*)",
+      "mcp__filesystem-with-morph__edit_file",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

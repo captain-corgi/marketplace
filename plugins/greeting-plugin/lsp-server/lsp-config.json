@@ -1,0 +1,6 @@
+{
+  "corgi-greeting-lsp": {
+    "command": "node",
+    "args": ["${CLAUDE_PLUGIN_ROOT}/lsp-server/dist/index.js", "--stdio"]
+  }
+}
