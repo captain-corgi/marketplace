@@ -5,7 +5,10 @@
       "Bash(gh api:*)",
       "mcp__filesystem-with-morph__edit_file",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "mcp__morph-mcp__warpgrep_codebase_search",
+      "Skill(adaptive-learning:learn_architecture)",
+      "Skill(adaptive-learning:learn_architecture:*)"
     ]
   }
 }
