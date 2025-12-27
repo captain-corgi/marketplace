@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "corgi-hub-plugins",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "owner": {
     "name": "Captain Corgi",
     "url": "https://github.com/captain-corgi"

@@ -5,6 +5,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-12-27
+
+### Added
+
+#### Jira Plugin
+
+- **New plugin: jira-plugin** - Full-featured Jira Cloud integration
+- **15 slash commands** for comprehensive Jira management:
+  - `/jira-create-issue` - Create new Jira issues
+  - `/jira-get-issue` - Retrieve issue details
+  - `/jira-edit-issue` - Edit existing issues
+  - `/jira-search` - Search with JQL queries
+  - `/jira-transition` - Transition issue status
+  - `/jira-comment` - Add comments to issues
+  - `/jira-get-comments` - Retrieve issue comments
+  - `/jira-boards` - List all boards (Scrum/Kanban)
+  - `/jira-sprints` - List sprints for a board
+  - `/jira-create-sprint` - Create new sprints
+  - `/jira-sprint-issues` - Get issues in a sprint
+  - `/jira-move-to-sprint` - Move issues to sprint
+  - `/jira-projects` - List all projects
+  - `/jira-status` - Test connection and verify config
+- **Jira Agent** - Specialized agent for Jira workflows
+- Pure JavaScript implementation with no external dependencies
+- Environment variable configuration (JIRA_URL, JIRA_EMAIL, JIRA_API_KEY)
+
+#### Documentation
+
+- Updated CLAUDE.md with jira-plugin architecture and commands
+- Added jira-plugin README with setup instructions
+
+### Changed
+
+- Marketplace metadata now includes "development" category
+- Updated project overview to reflect multi-plugin marketplace
+
 ## [1.0.0] - 2024-12-20
 
 ### Added

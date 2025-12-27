@@ -1,7 +1,7 @@
 {
   "name": "greeting-plugin",
   "description": "The Corgi Greeting Team - A comprehensive plugin featuring 4 corgi specialists who provide greetings, encouragement, and developer joy through agents, commands, hooks, MCP server, and LSP server.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Captain Corgi",
     "url": "https://github.com/captain-corgi"

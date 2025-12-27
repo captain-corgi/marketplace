@@ -1,7 +1,7 @@
 {
   "name": "jira-plugin",
   "description": "Full-featured Jira Cloud integration - manage issues, sprints, boards, and Agile/Scrum workflows through natural language commands.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Captain Corgi",
     "url": "https://github.com/captain-corgi"

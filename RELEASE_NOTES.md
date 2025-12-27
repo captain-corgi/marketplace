@@ -1,58 +1,47 @@
-# v1.0.0 - Corgi Hub Plugins
+# v1.1.0 - Corgi Hub Plugins
 
-Welcome to the first official release of **Corgi Hub Plugins** - a comprehensive Claude Code plugin marketplace featuring the Corgi Greeting Team!
+The **Jira Plugin** has arrived! This release adds a full-featured Jira Cloud integration to the Corgi Hub Plugins marketplace.
 
-## Meet the Team
+## What's New
 
-| Corgi | Role | Specialty |
-|-------|------|-----------|
-| 🎖️ **Captain Corgi** | Team Leader | Formal, professional greetings |
-| 🎉 **Cheerful Charlie** | Enthusiasm Expert | Casual greetings, celebrations |
-| 🧡 **Cozy Cinnamon** | Comfort Specialist | Supportive, encouraging messages |
-| 💻 **Code Corgi** | Developer Buddy | Programming puns, dev greetings |
+### Jira Plugin
 
-## Highlights
+Manage your entire Jira workflow without leaving Claude Code:
 
-### Plugin Features
+| Feature | Commands |
+|---------|----------|
+| **Issue Management** | `/jira-create-issue`, `/jira-get-issue`, `/jira-edit-issue`, `/jira-search`, `/jira-transition` |
+| **Comments** | `/jira-comment`, `/jira-get-comments` |
+| **Boards & Sprints** | `/jira-boards`, `/jira-sprints`, `/jira-create-sprint`, `/jira-sprint-issues`, `/jira-move-to-sprint` |
+| **Projects** | `/jira-projects` |
+| **Configuration** | `/jira-status` |
 
-- **4 Specialized Agents** - Each corgi has a unique personality and greeting style
-- **6 Slash Commands** - Quick access to greetings, motivation, and celebrations
-- **3 Event Hooks** - Automatic encouragement during your coding sessions
-- **MCP Server** - Full-featured greeting service with 5 tools and 3 resources
-- **LSP Server** - Reference implementation for future extensibility
+**Key Features:**
+- 15 slash commands for comprehensive Jira management
+- JQL (Jira Query Language) support for powerful searches
+- Agile/Scrum workflow support (sprints, boards, backlogs)
+- Pure JavaScript - no external dependencies
+- Secure environment variable configuration
 
-### Slash Commands
-
-| Command | Description |
-|---------|-------------|
-| `/greet` | Get a greeting from a random corgi |
-| `/welcome` | Formal welcome from Captain Corgi |
-| `/farewell` | Cheerful goodbye from Charlie |
-| `/motivate` | Encouragement from Cozy Cinnamon |
-| `/celebrate` | Team celebration for achievements |
-| `/corgi-team` | Meet all the corgis |
-
-## Installation
-
-### Add the Marketplace
+### Installation
 
 ```bash
 /plugin marketplace add captain-corgi/corgi-hub-plugins
+/plugin install jira-plugin@corgi-hub-plugins
 ```
 
-### Install the Plugin
+**Setup Requirements:**
+- `JIRA_URL` - Your Jira instance URL (e.g., `https://your-domain.atlassian.net`)
+- `JIRA_EMAIL` - Your Jira account email
+- `JIRA_API_KEY` - API token from [Atlassian](https://id.atlassian.com/manage-profile/security/api-tokens)
 
-```bash
-/plugin install greeting-plugin@corgi-hub-plugins
-```
+### Documentation
 
-## Documentation
-
-- [README](https://github.com/captain-corgi/corgi-hub-plugins#readme) - Full documentation
-- [CHANGELOG](https://github.com/captain-corgi/corgi-hub-plugins/blob/main/CHANGELOG.md) - Version history
+- [Jira Plugin README](https://github.com/captain-corgi/corgi-hub-plugins/blob/main/plugins/jira-plugin/README.md)
+- [CHANGELOG](https://github.com/captain-corgi/corgi-hub-plugins/blob/main/CHANGELOG.md) - Full version history
 
 ---
 
 **Made with 🧡 by the Corgi Greeting Team**
 
-*"Spreading joy, one greeting at a time!"* 🐕✨
+*"Spreading joy and managing issues, one command at a time!"* 🐕✨
