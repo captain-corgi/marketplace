@@ -1,27 +1,48 @@
-# v1.1.0 - Corgi Hub Plugins
+# v1.2.0 - Corgi Hub Plugins
 
-The **Jira Plugin** has arrived! This release adds a full-featured Jira Cloud integration to the Corgi Hub Plugins marketplace.
+**Jira Plugin 2.0** brings powerful bulk operations and a new Skills architecture to the Corgi Hub Plugins marketplace.
 
 ## What's New
 
-### Jira Plugin
+### Jira Plugin 2.0.0 - Major Upgrade
 
-Manage your entire Jira workflow without leaving Claude Code:
+#### 🚀 Bulk Operations
 
-| Feature | Commands |
-|---------|----------|
-| **Issue Management** | `/jira-create-issue`, `/jira-get-issue`, `/jira-edit-issue`, `/jira-search`, `/jira-transition` |
-| **Comments** | `/jira-comment`, `/jira-get-comments` |
-| **Boards & Sprints** | `/jira-boards`, `/jira-sprints`, `/jira-create-sprint`, `/jira-sprint-issues`, `/jira-move-to-sprint` |
-| **Projects** | `/jira-projects` |
-| **Configuration** | `/jira-status` |
+Convert issues to sub-tasks, move issues in bulk, and track async operations:
 
-**Key Features:**
-- 15 slash commands for comprehensive Jira management
-- JQL (Jira Query Language) support for powerful searches
-- Agile/Scrum workflow support (sprints, boards, backlogs)
-- Pure JavaScript - no external dependencies
-- Secure environment variable configuration
+```bash
+/jira-convert-to-subtasks TC-1 TC-2 TC-3 TC-4
+```
+
+| Function | Purpose |
+|----------|---------|
+| `bulkMoveIssues(options)` | Move/convert issues in bulk (async) |
+| `getBulkTaskStatus(taskId)` | Check bulk operation progress |
+| `convertToSubtasks(issueKeys, parentKey, projectKey)` | Convert to sub-tasks |
+
+#### 🎯 New Skills Architecture
+
+The Jira plugin now uses Claude Code's Skills system for better organization:
+
+- **Skill Definition** - `skills/jira/SKILL.md` with comprehensive documentation
+- **Bundled Scripts** - `api.js`, `auth.js`, `formatters.js` in `skills/jira/scripts/`
+- **Reference Docs** - JQL patterns and advanced query examples
+
+#### 📦 Enhanced API (22 Functions)
+
+New API functions for users and batch operations:
+
+| Function | Purpose |
+|----------|---------|
+| `getCurrentUser()` | Get authenticated user |
+| `searchUsers(query, maxResults)` | Search users by email/name |
+| `assignIssue(issueKey, email)` | Assign with email-to-accountId conversion |
+| `batchFetchIssues(issueIds)` | Parallel issue fetching (10 concurrent) |
+
+#### ⚡ Improved Search Performance
+
+- New `/search/jql` endpoint with batch fetch for full issue details
+- Parallel fetching for better performance on large result sets
 
 ### Installation
 
@@ -44,4 +65,4 @@ Manage your entire Jira workflow without leaving Claude Code:
 
 **Made with 🧡 by the Corgi Greeting Team**
 
-*"Spreading joy and managing issues, one command at a time!"* 🐕✨
+*"Bulk operations made easy, one corgi command at a time!"* 🐕✨

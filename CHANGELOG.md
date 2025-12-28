@@ -5,6 +5,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-12-28
+
+### Added
+
+#### Jira Plugin 2.0.0 - Major Upgrade
+
+**New Skills Architecture:**
+- Introduced `skills/jira/SKILL.md` - Comprehensive skill definition for Claude Code
+- Bundled scripts in `skills/jira/scripts/` for direct API access
+- Progressive disclosure with `references/jql-patterns.md`
+
+**Bulk Operations (NEW):**
+- `/jira-convert-to-subtasks` - Convert issues to sub-tasks of a parent
+- `bulkMoveIssues(options)` - Bulk move/convert issues (async)
+- `getBulkTaskStatus(taskId)` - Check async operation progress
+- `convertToSubtasks(issueKeys, parentKey, projectKey)` - Convert to sub-tasks
+
+**Enhanced API Functions (22 total):**
+- `batchFetchIssues(issueIds, concurrency)` - Parallel issue fetching
+- `getCurrentUser()` - Get authenticated user
+- `searchUsers(query, maxResults)` - Search users by email/name
+- `assignIssue(issueKey, emailOrAccount)` - Assign with email-to-accountId conversion
+
+**Improved Search:**
+- Uses new `/search/jql` endpoint with batch fetch for full issue details
+- Better performance with parallel fetching (max 10 concurrent)
+
+### Changed
+
+- Jira plugin version bumped to 2.0.0 (major feature additions)
+- Reorganized Jira scripts from `lib/` to `skills/jira/scripts/`
+- Enhanced error handling with HTTP status documentation
+- Updated CLAUDE.md with complete API function reference
+
 ## [1.1.0] - 2025-12-27
 
 ### Added
