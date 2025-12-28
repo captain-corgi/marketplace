@@ -230,11 +230,12 @@ function getSprints(boardId, state = null) {
 }
 
 /**
- * Get issues in a sprint
+ * Get all issues in a sprint
  * GET /rest/agile/1.0/sprint/{sprintId}/issue
  */
 function getSprintIssues(sprintId) {
-  return jiraRequest(`/rest/agile/1.0/sprint/${sprintId}/issue`, 'GET');
+  return jiraRequest(`/rest/agile/1.0/sprint/${sprintId}/issue`, 'GET')
+    .then(result => result.issues || []);
 }
 
 /**

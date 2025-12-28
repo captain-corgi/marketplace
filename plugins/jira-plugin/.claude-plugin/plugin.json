@@ -1,7 +1,7 @@
 {
   "name": "jira-plugin",
   "description": "Full-featured Jira Cloud integration - manage issues, sprints, boards, and Agile/Scrum workflows through natural language commands.",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "author": {
     "name": "Captain Corgi",
     "url": "https://github.com/captain-corgi"
@@ -9,5 +9,6 @@
   "license": "MIT",
   "keywords": ["jira", "agile", "scrum", "issue-tracking", "project-management", "bulk-operations"],
   "commands": ["./commands/"],
-  "agents": ["./agents/jira-agent.md"]
+  "agents": ["./agents/jira-agent.md"],
+  "skills": ["./skills/"]
 }

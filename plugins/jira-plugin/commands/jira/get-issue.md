@@ -4,54 +4,29 @@ description: <issueKey> - Get detailed information about a Jira issue
 
 # Get Jira Issue Details
 
-## Instructions
+This command uses the **jira skill** for Jira Cloud API integration.
 
-1. Load the API client from `${CLAUDE_PLUGIN_ROOT}/lib/api.js`
-2. Load formatters from `${CLAUDE_PLUGIN_ROOT}/lib/formatters.js`
-3. Extract the issue key from the user's request
-4. Call `api.getIssue(issueKey)`
-5. Format the response using `formatters.formatIssueDetail(issue)`
-6. Display the formatted result
+## Implementation
+
+The jira skill provides all necessary functionality:
+- Use `scripts/api.js` for `getIssue(issueKey)` function
+- Use `scripts/formatters.js` for `formatIssueDetail(issue)` function
+- Parse issue key from user input
+- Handle not found and permission errors
 
 ## Example Usage
-
-### Basic Examples
 
 ```
 /jira-get-issue PROJ-123
 ```
 
-### Real-World Workflows
+### Use Cases
 
-**Check Issue Before Working:**
-```
-/jira-get-issue PROJ-456
-# Use case: Review full issue details before starting implementation
-```
-
-**Verify Bug Status:**
-```
-/jira-get-issue PROJ-789
-# Use case: Check if a bug has been fixed and deployed
-```
-
-**Review Acceptance Criteria:**
-```
-/jira-get-issue PROJ-101
-# Use case: Get full description and acceptance criteria before starting a story
-```
-
-**Check Assignment:**
-```
-/jira-get-issue PROJ-202
-# Use case: See who is assigned to an issue and current status
-```
-
-**Get Issue URL:**
-```
-/jira-get-issue PROJ-305
-# Use case: Get the Jira URL to share with team members
-```
+- **Before Working** - Review full details before starting implementation
+- **Verify Bug Status** - Check if a bug has been fixed and deployed
+- **Review Acceptance Criteria** - Get full description before starting a story
+- **Check Assignment** - See who is assigned and current status
+- **Get Issue URL** - Obtain the Jira URL to share with team
 
 ## Output
 
@@ -70,32 +45,19 @@ description: <issueKey> - Get detailed information about a Jira issue
 │                                                                    │
 │ Users report being unable to login after completing password    │
 │ reset flow. Error message: "Invalid credentials"                │
-│                                                                    │
-│ Steps to reproduce:                                              │
-│ 1. Request password reset                                        │
-│ 2. Click email link                                              │
-│ 3. Set new password                                              │
-│ 4. Attempt to login                                              │
 ├─────────────────────────────────────────────────────────────────┤
 │ URL: https://your-domain.atlassian.net/browse/PROJ-123          │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## Error Scenarios
+## Error Handling
 
-**Issue Not Found:**
-```
-Error: Issue PROJ-999 does not exist or you don't have permission to view it
-```
-
-**No Permission:**
-```
-Error: You don't have permission to view this issue
-```
+| Error | Handling |
+|-------|----------|
+| Issue not found | "Issue does not exist or you don't have permission" |
+| No permission | "You don't have permission to view this issue" |
 
 ## Notes
 
-- Full issue details including summary, status, priority, assignee, description, and link to Jira
-- Use this command when you need complete information about a single issue
-- The URL provided can be opened in a browser to view the issue in Jira's web interface
-- All fields you have permission to view will be displayed
+- Displays all fields you have permission to view
+- URL opens issue in Jira web interface
