@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "corgi-hub-plugins",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "owner": {
     "name": "Captain Corgi",
     "url": "https://github.com/captain-corgi"
@@ -14,7 +14,7 @@
       "name": "greeting-plugin",
       "description": "The Corgi Greeting Team - 4 corgi specialists (Captain Corgi, Cheerful Charlie, Cozy Cinnamon, Code Corgi) providing greetings, encouragement, and developer joy. Demonstrates Claude Code plugin features including agents, commands, hooks, and MCP servers.",
       "source": "./plugins/greeting-plugin",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "greeting",
       "author": {
         "name": "Captain Corgi",
@@ -48,7 +48,7 @@
       "name": "jira-plugin",
       "description": "Full-featured Jira Cloud integration - manage issues, sprints, boards, and Agile/Scrum workflows through natural language commands.",
       "source": "./plugins/jira-plugin",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "category": "development",
       "author": {
         "name": "Captain Corgi",
