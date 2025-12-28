@@ -36,22 +36,39 @@ function getJiraUrl() {
 }
 
 /**
+ * Get all Jira configuration values
+ * @returns {Object} Configuration object with url, email, and apiKey
+ */
+function getConfig() {
+  return {
+    url: getJiraUrl(),
+    email: process.env.JIRA_EMAIL,
+    apiKey: process.env.JIRA_API_KEY
+  };
+}
+
+/**
  * Validate that all required environment variables are set
- * @returns {Object} Validation result with success flag and errors array
+ * @returns {Object} Validation result with detailed configuration info
  */
 function validateConfig() {
-  const errors = [];
-  if (!process.env.JIRA_URL) errors.push('JIRA_URL is not set');
-  if (!process.env.JIRA_EMAIL) errors.push('JIRA_EMAIL is not set');
-  if (!process.env.JIRA_API_KEY) errors.push('JIRA_API_KEY is not set');
+  const missing = [];
+  if (!process.env.JIRA_URL) missing.push('JIRA_URL');
+  if (!process.env.JIRA_EMAIL) missing.push('JIRA_EMAIL');
+  if (!process.env.JIRA_API_KEY) missing.push('JIRA_API_KEY');
+
   return {
-    valid: errors.length === 0,
-    errors
+    valid: missing.length === 0,
+    missing,
+    url: process.env.JIRA_URL,
+    email: process.env.JIRA_EMAIL,
+    apiKeyLength: process.env.JIRA_API_KEY ? process.env.JIRA_API_KEY.length : 0
   };
 }
 
 module.exports = {
   getAuthHeaders,
   getJiraUrl,
-  validateConfig
+  validateConfig,
+  getConfig
 };

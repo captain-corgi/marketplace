@@ -185,21 +185,55 @@ Hooks use regex matchers against tool names. Example from `plugin.json`:
 | `/jira-create-sprint` | Create a new sprint |
 | `/jira-sprint-issues` | Get issues in a sprint |
 | `/jira-move-to-sprint` | Move issues to a sprint |
+| `/jira-convert-to-subtasks` | Convert issues to sub-tasks of a parent |
 | `/jira-projects` | List all projects |
 | `/jira-status` | Test connection and verify configuration |
 
-## MCP Tools & Resources
+### jira-plugin API Functions
 
-### greeting-plugin Tools & Resources
+The `lib/api.js` module provides the following functions:
 
-**Tools:** `get_greeting`, `get_random_corgi`, `add_custom_greeting`, `get_greeting_stats`, `get_programming_pun`
+**Issue Management:**
+- `createIssue(fields)` - Create a new issue
+- `getIssue(issueKey)` - Get issue details
+- `updateIssue(issueKey, fields)` - Edit an issue
+- `searchIssues(jql, maxResults, startAt)` - Search with JQL
+- `getTransitions(issueKey)` - Get available transitions
+- `transitionIssue(issueKey, transitionId, fields)` - Change status
 
-**Resources:** `corgi://team`, `corgi://greetings/today`, `corgi://greetings/custom`
+**Comments:**
+- `getComments(issueKey)` - Get issue comments
+- `addComment(issueKey, body)` - Add a comment
 
-### jira-plugin Environment Variables
+**Agile/Scrum:**
+- `getBoards(boardType, maxResults)` - List boards
+- `getBoardConfiguration(boardId)` - Get board config
+- `getSprints(boardId, state)` - List board sprints
+- `getSprintIssues(sprintId)` - Get sprint issues
+- `createSprint(name, boardId, startDate, endDate)` - Create sprint
+- `updateSprint(sprintId, updates)` - Update sprint (full update)
+- `partiallyUpdateSprint(sprintId, updates)` - Update sprint (partial update)
+- `moveIssuesToSprint(sprintId, issueKeys)` - Move issues to sprint
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `JIRA_URL` | Jira instance URL | `https://your-domain.atlassian.net` |
-| `JIRA_EMAIL` | Jira account email | `your-email@example.com` |
-| `JIRA_API_KEY` | Jira API token | Generate at [Atlassian](https://id.atlassian.com/manage-profile/security/api-tokens) |
+**Bulk Operations (NEW):**
+- `bulkMoveIssues(options)` - Move/convert issues in bulk
+  - Options: `issueIdsOrKeys`, `projectKey`, `issueTypeId`, `parentKey`, `sendNotification`
+- `getBulkTaskStatus(taskId)` - Check bulk operation progress
+- `convertToSubtasks(issueKeys, parentKey, projectKey)` - Convert to sub-tasks
+
+**Projects:**
+- `getProjects()` - List all projects
+- `getProject(keyOrId)` - Get project details
+
+### Bulk Operations Important Notes
+
+The Bulk Move API (`/rest/api/3/bulk/issues/move`) is the **only** way to:
+- Convert issues to sub-tasks
+- Change an issue's parent
+- Change issue type during a move operation
+
+**Key format:** `targetToSourcesMapping` uses keys in format:
+- `"projectKey,issueTypeId"` - For regular issues
+- `"projectKey,issueTypeId,parentKey"` - For sub-tasks
+
+**Operation runs asynchronously** - Returns a `taskId` for tracking progress.
