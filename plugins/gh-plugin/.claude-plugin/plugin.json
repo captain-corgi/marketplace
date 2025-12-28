@@ -1,0 +1,14 @@
+{
+  "name": "gh-plugin",
+  "description": "Comprehensive GitHub integration - manage repositories, issues, pull requests, actions, branches, and notifications through natural language commands using GitHub CLI.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Captain Corgi",
+    "url": "https://github.com/captain-corgi"
+  },
+  "license": "MIT",
+  "keywords": ["github", "git", "repositories", "issues", "pull-requests", "actions", "workflows", "branches"],
+  "commands": ["./commands/"],
+  "agents": ["./agents/gh-agent.md"],
+  "skills": ["./skills/"]
+}

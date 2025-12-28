@@ -69,6 +69,33 @@
       "repository": "https://github.com/captain-corgi/corgi-hub-plugins",
       "agents": ["./agents/jira-agent.md"],
       "commands": ["./commands/"]
+    },
+    {
+      "name": "gh-plugin",
+      "description": "Comprehensive GitHub integration - manage repositories, issues, pull requests, actions, branches, and notifications through natural language commands using GitHub CLI.",
+      "source": "./plugins/gh-plugin",
+      "version": "1.0.0",
+      "category": "development",
+      "author": {
+        "name": "Captain Corgi",
+        "url": "https://github.com/captain-corgi"
+      },
+      "license": "MIT",
+      "keywords": [
+        "github",
+        "git",
+        "repositories",
+        "issues",
+        "pull-requests",
+        "actions",
+        "workflows",
+        "branches",
+        "ci-cd"
+      ],
+      "homepage": "https://github.com/captain-corgi/corgi-hub-plugins",
+      "repository": "https://github.com/captain-corgi/corgi-hub-plugins",
+      "agents": ["./agents/gh-agent.md"],
+      "commands": ["./commands/"]
     }
   ],
   "categories": [
